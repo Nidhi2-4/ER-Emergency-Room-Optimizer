@@ -1,0 +1,182 @@
+[
+  {
+    "id": "P-2041",
+    "name": "Rajesh Kumar",
+    "injury": "Cardiac Arrest",
+    "severity": 95,
+    "treatmentTime": 180,
+    "status": "Critical",
+    "rank": 1
+  },
+  {
+    "id": "P-2042",
+    "name": "Priya Sharma",
+    "injury": "Head Trauma",
+    "severity": 92,
+    "treatmentTime": 240,
+    "status": "Critical",
+    "rank": 2
+  },
+  {
+    "id": "P-2044",
+    "name": "Sneha Reddy",
+    "injury": "Internal Bleeding",
+    "severity": 90,
+    "treatmentTime": 200,
+    "status": "Critical",
+    "rank": 3
+  },
+  {
+    "id": "P-2043",
+    "name": "Amit Patel",
+    "injury": "Multiple Fractures",
+    "severity": 88,
+    "treatmentTime": 150,
+    "status": "Critical",
+    "rank": 4
+  },
+  {
+    "id": "P-2045",
+    "name": "Vikram Singh",
+    "injury": "Spinal Injury",
+    "severity": 85,
+    "treatmentTime": 300,
+    "status": "Critical",
+    "rank": 5
+  },
+  {
+    "id": "P-2046",
+    "name": "Kavita Gupta",
+    "injury": "Severe Burns",
+    "severity": 80,
+    "treatmentTime": 180,
+    "status": "Critical",
+    "rank": 6
+  },
+  {
+    "id": "P-2047",
+    "name": "Arjun Nair",
+    "injury": "Pneumothorax",
+    "severity": 75,
+    "treatmentTime": 120,
+    "status": "Critical",
+    "rank": 7
+  },
+  {
+    "id": "P-2048",
+    "name": "Divya Menon",
+    "injury": "Fracture - Femur",
+    "severity": 70,
+    "treatmentTime": 90,
+    "status": "Moderate",
+    "rank": 8
+  },
+  {
+    "id": "P-2049",
+    "name": "Rahul Desai",
+    "injury": "Deep Laceration",
+    "severity": 65,
+    "treatmentTime": 60,
+    "status": "Moderate",
+    "rank": 9
+  },
+  {
+    "id": "P-2050",
+    "name": "Anjali Verma",
+    "injury": "Concussion",
+    "severity": 60,
+    "treatmentTime": 45,
+    "status": "Moderate",
+    "rank": 10
+  },
+  {
+    "id": "P-2051",
+    "name": "Sanjay Iyer",
+    "injury": "Broken Arm",
+    "severity": 50,
+    "treatmentTime": 60,
+    "status": "Moderate",
+    "rank": 11
+  },
+  {
+    "id": "P-2052",
+    "name": "Pooja Kapoor",
+    "injury": "Minor Burns",
+    "severity": 45,
+    "treatmentTime": 30,
+    "status": "Stable",
+    "rank": 12
+  },
+  {
+    "id": "P-2053",
+    "name": "Karan Mehta",
+    "injury": "Sprained Ankle",
+    "severity": 40,
+    "treatmentTime": 20,
+    "status": "Stable",
+    "rank": 13
+  },
+  {
+    "id": "P-2054",
+    "name": "Neha Joshi",
+    "injury": "Cuts & Bruises",
+    "severity": 35,
+    "treatmentTime": 15,
+    "status": "Stable",
+    "rank": 14
+  },
+  {
+    "id": "P-2055",
+    "name": "Manish Rao",
+    "injury": "Allergic Reaction",
+    "severity": 30,
+    "treatmentTime": 25,
+    "status": "Stable",
+    "rank": 15
+  },
+  {
+    "id": "P-2056",
+    "name": "Simran Kaur",
+    "injury": "Mild Chest Pain",
+    "severity": 28,
+    "treatmentTime": 30,
+    "status": "Stable",
+    "rank": 16
+  },
+  {
+    "id": "P-2057",
+    "name": "Aditya Shah",
+    "injury": "Dehydration",
+    "severity": 25,
+    "treatmentTime": 20,
+    "status": "Stable",
+    "rank": 17
+  },
+  {
+    "id": "P-2058",
+    "name": "Ritu Bansal",
+    "injury": "Food Poisoning",
+    "severity": 22,
+    "treatmentTime": 30,
+    "status": "Stable",
+    "rank": 18
+  },
+  {
+    "id": "P-2059",
+    "name": "Deepak Malhotra",
+    "injury": "Minor Abrasion",
+    "severity": 18,
+    "treatmentTime": 10,
+    "status": "Stable",
+    "rank": 19
+  },
+  {
+    "id": "P-2060",
+    "name": "Swati Agarwal",
+    "injury": "Headache",
+    "severity": 15,
+    "treatmentTime": 15,
+    "status": "Stable",
+    "rank": 20
+  }
+]

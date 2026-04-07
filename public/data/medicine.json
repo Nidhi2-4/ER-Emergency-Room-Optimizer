@@ -1,0 +1,167 @@
+{
+  "medicines": [
+    {
+      "id": "M-001",
+      "name": "Morphine",
+      "stock": 50,
+      "required": 37,
+      "unit": "vials"
+    },
+    {
+      "id": "M-002",
+      "name": "Epinephrine",
+      "stock": 80,
+      "required": 15,
+      "unit": "doses"
+    },
+    {
+      "id": "M-003",
+      "name": "Antibiotics",
+      "stock": 200,
+      "required": 98,
+      "unit": "doses"
+    },
+    {
+      "id": "M-004",
+      "name": "Blood Type O+",
+      "stock": 15,
+      "required": 4,
+      "unit": "units"
+    },
+    {
+      "id": "M-005",
+      "name": "Blood Type A+",
+      "stock": 8,
+      "required": 0,
+      "unit": "units"
+    },
+    {
+      "id": "M-006",
+      "name": "Anesthesia",
+      "stock": 100,
+      "required": 10,
+      "unit": "doses"
+    },
+    {
+      "id": "M-007",
+      "name": "Saline Solution",
+      "stock": 300,
+      "required": 74,
+      "unit": "bags"
+    },
+    {
+      "id": "M-008",
+      "name": "Insulin",
+      "stock": 45,
+      "required": 12,
+      "unit": "vials"
+    },
+    {
+      "id": "M-009",
+      "name": "Anticoagulants",
+      "stock": 30,
+      "required": 5,
+      "unit": "doses"
+    },
+    {
+      "id": "M-010",
+      "name": "Pain Relievers",
+      "stock": 150,
+      "required": 35,
+      "unit": "doses"
+    }
+  ],
+  "treated": [
+    {
+      "patientId": "P-2041",
+      "patientName": "Rajesh Kumar",
+      "medicines": [
+        "10 doses of Epinephrine",
+        "8 vials of Morphine",
+        "5 doses of Anticoagulants"
+      ]
+    },
+    {
+      "patientId": "P-2042",
+      "patientName": "Priya Sharma",
+      "medicines": [
+        "6 vials of Morphine",
+        "20 bags of Saline Solution",
+        "15 doses of Antibiotics"
+      ]
+    },
+    {
+      "patientId": "P-2043",
+      "patientName": "Amit Patel",
+      "medicines": [
+        "5 vials of Morphine",
+        "20 doses of Antibiotics",
+        "10 doses of Pain Relievers"
+      ]
+    },
+    {
+      "patientId": "P-2044",
+      "patientName": "Sneha Reddy",
+      "medicines": [
+        "4 units of Blood Type O+",
+        "15 bags of Saline Solution",
+        "10 doses of Antibiotics"
+      ]
+    },
+    {
+      "patientId": "P-2045",
+      "patientName": "Vikram Singh",
+      "medicines": [
+        "8 vials of Morphine",
+        "10 doses of Anesthesia",
+        "10 bags of Saline Solution"
+      ]
+    },
+    {
+      "patientId": "P-2046",
+      "patientName": "Kavita Gupta",
+      "medicines": [
+        "6 vials of Morphine",
+        "25 doses of Antibiotics",
+        "10 bags of Saline Solution"
+      ]
+    },
+    {
+      "patientId": "P-2047",
+      "patientName": "Arjun Nair",
+      "medicines": [
+        "5 doses of Epinephrine",
+        "8 bags of Saline Solution",
+        "10 doses of Antibiotics"
+      ]
+    },
+    {
+      "patientId": "P-2048",
+      "patientName": "Divya Menon",
+      "medicines": [
+        "4 vials of Morphine",
+        "12 doses of Pain Relievers",
+        "8 doses of Antibiotics"
+      ]
+    },
+    {
+      "patientId": "P-2049",
+      "patientName": "Rahul Desai",
+      "medicines": [
+        "10 doses of Antibiotics",
+        "8 doses of Pain Relievers",
+        "5 bags of Saline Solution"
+      ]
+    },
+    {
+      "patientId": "P-2050",
+      "patientName": "Anjali Verma",
+      "medicines": [
+        "12 vials of Insulin",
+        "6 bags of Saline Solution",
+        "5 doses of Pain Relievers"
+      ]
+    }
+  ],
+  "untreated": []
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "D-101",
+    "name": "Dr. Ramesh Kumar",
+    "specialization": "Cardiology",
+    "status": "busy",
+    "assignedCase": "P-2041 - Cardiac Arrest"
+  },
+  {
+    "id": "D-102",
+    "name": "Dr. Sunita Rao",
+    "specialization": "Neurology",
+    "status": "busy",
+    "assignedCase": "P-2042 - Head Trauma"
+  },
+  {
+    "id": "D-103",
+    "name": "Dr. Ashok Patel",
+    "specialization": "Orthopedics",
+    "status": "busy",
+    "assignedCase": "P-2043 - Multiple Fractures"
+  },
+  {
+    "id": "D-104",
+    "name": "Dr. Meera Reddy",
+    "specialization": "General Surgery",
+    "status": "busy",
+    "assignedCase": "P-2044 - Internal Bleeding"
+  },
+  {
+    "id": "D-105",
+    "name": "Dr. Suresh Nair",
+    "specialization": "Emergency Medicine",
+    "status": "busy",
+    "assignedCase": "P-2047 - Pneumothorax"
+  },
+  {
+    "id": "D-106",
+    "name": "Dr. Lakshmi Iyer",
+    "specialization": "Anesthesiology",
+    "status": "available",
+    "assignedCase": null
+  },
+  {
+    "id": "D-107",
+    "name": "Dr. Vijay Singh",
+    "specialization": "Trauma Surgery",
+    "status": "busy",
+    "assignedCase": "P-2045 - Spinal Injury"
+  },
+  {
+    "id": "D-108",
+    "name": "Dr. Priya Desai",
+    "specialization": "Pediatrics",
+    "status": "available",
+    "assignedCase": null
+  }
+]

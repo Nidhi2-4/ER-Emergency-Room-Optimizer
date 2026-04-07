@@ -1,0 +1,86 @@
+[
+  {
+    "id": "OT-1",
+    "name": "OT 1",
+    "surgeries": [
+      {
+        "patientId": "P-2041",
+        "patientName": "Rajesh Kumar",
+        "duration": 180,
+        "survivalScore": 95
+      },
+      {
+        "patientId": "P-2048",
+        "patientName": "Divya Menon",
+        "duration": 90,
+        "survivalScore": 70
+      },
+      {
+        "patientId": "P-2049",
+        "patientName": "Rahul Desai",
+        "duration": 60,
+        "survivalScore": 65
+      },
+      {
+        "patientId": "P-2050",
+        "patientName": "Anjali Verma",
+        "duration": 45,
+        "survivalScore": 60
+      },
+      {
+        "patientId": "P-2051",
+        "patientName": "Sanjay Iyer",
+        "duration": 60,
+        "survivalScore": 50
+      },
+      {
+        "patientId": "P-2052",
+        "patientName": "Pooja Kapoor",
+        "duration": 30,
+        "survivalScore": 45
+      }
+    ]
+  },
+  {
+    "id": "OT-2",
+    "name": "OT 2",
+    "surgeries": [
+      {
+        "patientId": "P-2043",
+        "patientName": "Amit Patel",
+        "duration": 150,
+        "survivalScore": 88
+      },
+      {
+        "patientId": "P-2044",
+        "patientName": "Sneha Reddy",
+        "duration": 200,
+        "survivalScore": 90
+      },
+      {
+        "patientId": "P-2047",
+        "patientName": "Arjun Nair",
+        "duration": 120,
+        "survivalScore": 75
+      }
+    ]
+  },
+  {
+    "id": "OT-3",
+    "name": "OT 3",
+    "surgeries": [
+      {
+        "patientId": "P-2042",
+        "patientName": "Priya Sharma",
+        "duration": 240,
+        "survivalScore": 92
+      },
+      {
+        "patientId": "P-2046",
+        "patientName": "Kavita Gupta",
+        "duration": 180,
+        "survivalScore": 80
+      }
+    ]
+  }
+]

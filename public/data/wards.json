@@ -1,0 +1,136 @@
+[
+  {
+    "id": "wing-a",
+    "name": "Wing A",
+    "capacity": 15,
+    "patients": [
+      {
+        "bed": "A-101",
+        "patientId": "P-2051",
+        "patientName": "Sanjay Iyer",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-102",
+        "patientId": "P-2052",
+        "patientName": "Pooja Kapoor",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-103",
+        "patientId": "P-2053",
+        "patientName": "Karan Mehta",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-104",
+        "patientId": "P-2054",
+        "patientName": "Neha Joshi",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-105",
+        "patientId": "P-2055",
+        "patientName": "Manish Rao",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-106",
+        "patientId": "P-2056",
+        "patientName": "Simran Kaur",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-107",
+        "patientId": "P-2057",
+        "patientName": "Aditya Shah",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-108",
+        "patientId": "P-2058",
+        "patientName": "Ritu Bansal",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-109",
+        "patientId": "P-2059",
+        "patientName": "Deepak Malhotra",
+        "condition": "Stable"
+      },
+      {
+        "bed": "A-1010",
+        "patientId": "P-2060",
+        "patientName": "Swati Agarwal",
+        "condition": "Stable"
+      }
+    ]
+  },
+  {
+    "id": "wing-b",
+    "name": "Wing B",
+    "capacity": 15,
+    "patients": [
+      {
+        "bed": "B-201",
+        "patientId": "P-2041",
+        "patientName": "Rajesh Kumar",
+        "condition": "Critical"
+      },
+      {
+        "bed": "B-202",
+        "patientId": "P-2042",
+        "patientName": "Priya Sharma",
+        "condition": "Critical"
+      },
+      {
+        "bed": "B-203",
+        "patientId": "P-2043",
+        "patientName": "Amit Patel",
+        "condition": "Critical"
+      },
+      {
+        "bed": "B-204",
+        "patientId": "P-2044",
+        "patientName": "Sneha Reddy",
+        "condition": "Critical"
+      },
+      {
+        "bed": "B-205",
+        "patientId": "P-2045",
+        "patientName": "Vikram Singh",
+        "condition": "Critical"
+      },
+      {
+        "bed": "B-206",
+        "patientId": "P-2046",
+        "patientName": "Kavita Gupta",
+        "condition": "Moderate"
+      },
+      {
+        "bed": "B-207",
+        "patientId": "P-2047",
+        "patientName": "Arjun Nair",
+        "condition": "Moderate"
+      },
+      {
+        "bed": "B-208",
+        "patientId": "P-2048",
+        "patientName": "Divya Menon",
+        "condition": "Moderate"
+      },
+      {
+        "bed": "B-209",
+        "patientId": "P-2049",
+        "patientName": "Rahul Desai",
+        "condition": "Moderate"
+      },
+      {
+        "bed": "B-2010",
+        "patientId": "P-2050",
+        "patientName": "Anjali Verma",
+        "condition": "Moderate"
+      }
+    ]
+  }
+]
