@@ -10,22 +10,15 @@ type PatientStatus = "Critical" | "Moderate" | "Stable";
 
 export function PatientsTab({ patients, setPatients }: Props) {
   const [showAddModal, setShowAddModal] = useState(false);
-
   const [searchName, setSearchName] = useState("");
   const [searchResult, setSearchResult] = useState<Patient | null>(null);
 
-  const [newPatient, setNewPatient] = useState<{
-    name: string;
-    injury: string;
-    severity: number;
-    treatmentTime: number;
-    status: PatientStatus;
-  }>({
+  const [newPatient, setNewPatient] = useState({
     name: "",
     injury: "",
     severity: 50,
     treatmentTime: 30,
-    status: "Stable",
+    status: "Stable" as PatientStatus,
   });
 
   const getStatusColor = (status: PatientStatus) => {
@@ -36,15 +29,12 @@ export function PatientsTab({ patients, setPatients }: Props) {
         return { bg: "#FEF3C7", text: "#D97706" };
       case "Stable":
         return { bg: "#D1FAE5", text: "#16A34A" };
-      default:
-        return { bg: "#F3F4F6", text: "#6B7280" };
     }
   };
 
   const handleSearch = () => {
-    const result = patients.find(
-      (patient) =>
-        patient.name.toLowerCase() === searchName.toLowerCase()
+    const result = patients.find((patient) =>
+      patient.name.toLowerCase().includes(searchName.toLowerCase())
     );
 
     setSearchResult(result || null);
@@ -55,10 +45,8 @@ export function PatientsTab({ patients, setPatients }: Props) {
       ...patients.map((p) => parseInt(p.id.split("-")[1]))
     );
 
-    const newId = `P-${maxId + 1}`;
-
-    const patient: Patient = {
-      id: newId,
+    const newPatientData: Patient = {
+      id: `P-${maxId + 1}`,
       name: newPatient.name,
       injury: newPatient.injury,
       severity: newPatient.severity,
@@ -67,7 +55,7 @@ export function PatientsTab({ patients, setPatients }: Props) {
       rank: patients.length + 1,
     };
 
-    const updatedPatients = [...patients, patient].sort(
+    const updatedPatients = [...patients, newPatientData].sort(
       (a, b) => b.severity - a.severity
     );
 
@@ -99,41 +87,47 @@ export function PatientsTab({ patients, setPatients }: Props) {
 
   return (
     <div>
-      {/* Search Bar */}
-      <div className="mb-6 bg-white rounded-lg p-4 shadow-sm">
+      {/* Search Section */}
+      <div className="mb-6 bg-white rounded-lg p-4 shadow-sm border border-gray-200">
         <div className="flex gap-3">
           <input
             type="text"
             placeholder="Search patient by name"
             value={searchName}
             onChange={(e) => setSearchName(e.target.value)}
-            className="border rounded px-3 py-2 flex-1"
+            className="border border-gray-300 rounded-lg px-4 py-2 flex-1"
           />
 
           <button
             onClick={handleSearch}
-            className="bg-[#2563EB] text-white px-4 py-2 rounded"
+            className="bg-[#2563EB] text-white px-5 py-2 rounded-lg"
           >
             Search
           </button>
         </div>
 
         {searchResult && (
-          <div className="mt-4 p-3 bg-blue-50 rounded">
-            <div>Name: {searchResult.name}</div>
-            <div>ID: {searchResult.id}</div>
-            <div>Status: {searchResult.status}</div>
+          <div className="mt-4 border border-blue-200 bg-blue-50 rounded-lg p-4">
+            <div className="font-semibold text-blue-800 mb-2">
+              Search Result
+            </div>
+
+            <div className="grid grid-cols-4 gap-4 text-sm">
+              <div>ID: {searchResult.id}</div>
+              <div>Name: {searchResult.name}</div>
+              <div>Severity: {searchResult.severity}</div>
+              <div>Status: {searchResult.status}</div>
+            </div>
           </div>
         )}
       </div>
 
       {/* Main Table */}
-      <div
-        className="bg-white rounded-lg p-6"
-        style={{ boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)" }}
-      >
+      <div className="bg-white rounded-lg p-6 shadow-sm">
         <div className="flex justify-between items-center mb-6">
-          <h2>{patients.length} Patients Sorted by Criticality</h2>
+          <h2 className="text-xl font-semibold">
+            {patients.length} Patients Sorted by Criticality
+          </h2>
 
           <button
             onClick={() => setShowAddModal(true)}
@@ -143,69 +137,63 @@ export function PatientsTab({ patients, setPatients }: Props) {
           </button>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <div className="overflow-x-auto rounded-xl border border-gray-200">
-  <table className="w-full table-auto">
-    <thead className="bg-gray-50">
-      <tr>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Rank</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Patient ID</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Name</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Injury</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Severity</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Time</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
-        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
-      </tr>
-    </thead>
+        <div className="overflow-x-auto rounded-xl border border-gray-200">
+          <table className="w-full table-auto">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-4 py-3 text-left">Rank</th>
+                <th className="px-4 py-3 text-left">Patient ID</th>
+                <th className="px-4 py-3 text-left">Name</th>
+                <th className="px-4 py-3 text-left">Injury</th>
+                <th className="px-4 py-3 text-left">Severity</th>
+                <th className="px-4 py-3 text-left">Time</th>
+                <th className="px-4 py-3 text-left">Status</th>
+                <th className="px-4 py-3 text-left">Action</th>
+              </tr>
+            </thead>
 
-    <tbody className="divide-y divide-gray-100">
-      {patients.map((patient, index) => {
-        const statusColor = getStatusColor(patient.status);
+            <tbody className="divide-y divide-gray-100">
+              {patients.map((patient, index) => {
+                const statusColor = getStatusColor(patient.status);
 
-        return (
-          <tr
-            key={patient.id}
-            className={`hover:bg-gray-50 transition ${
-              index % 2 === 0 ? "bg-white" : "bg-gray-50/40"
-            }`}
-          >
-            <td className="px-4 py-4">{patient.rank}</td>
-            <td className="px-4 py-4 font-medium">{patient.id}</td>
-            <td className="px-4 py-4">{patient.name}</td>
-            <td className="px-4 py-4">{patient.injury}</td>
-            <td className="px-4 py-4 font-semibold">
-              {patient.severity}
-            </td>
-            <td className="px-4 py-4">
-              {patient.treatmentTime} min
-            </td>
-            <td className="px-4 py-4">
-              <span
-                className="px-3 py-1 rounded-full text-sm font-medium"
-                style={{
-                  backgroundColor: statusColor.bg,
-                  color: statusColor.text,
-                }}
-              >
-                {patient.status}
-              </span>
-            </td>
-            <td className="px-4 py-4">
-              <button
-                onClick={() => handleDeletePatient(patient.id)}
-                className="text-red-600 hover:text-red-800 font-medium"
-              >
-                Remove
-              </button>
-            </td>
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>
-</div>
+                return (
+                  <tr
+                    key={patient.id}
+                    className={`hover:bg-gray-50 ${
+                      index % 2 === 0 ? "bg-white" : "bg-gray-50/40"
+                    }`}
+                  >
+                    <td className="px-4 py-4">{patient.rank}</td>
+                    <td className="px-4 py-4">{patient.id}</td>
+                    <td className="px-4 py-4">{patient.name}</td>
+                    <td className="px-4 py-4">{patient.injury}</td>
+                    <td className="px-4 py-4">{patient.severity}</td>
+                    <td className="px-4 py-4">
+                      {patient.treatmentTime} min
+                    </td>
+                    <td className="px-4 py-4">
+                      <span
+                        className="px-3 py-1 rounded-full text-sm font-medium"
+                        style={{
+                          backgroundColor: statusColor.bg,
+                          color: statusColor.text,
+                        }}
+                      >
+                        {patient.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-4">
+                      <button
+                        onClick={() => handleDeletePatient(patient.id)}
+                        className="text-red-600 hover:text-red-800"
+                      >
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>
@@ -214,17 +202,14 @@ export function PatientsTab({ patients, setPatients }: Props) {
       {showAddModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg w-[400px]">
-            <h2 className="mb-4">Add Patient</h2>
+            <h2 className="mb-4 text-lg font-semibold">Add Patient</h2>
 
             <input
               type="text"
               placeholder="Name"
               value={newPatient.name}
               onChange={(e) =>
-                setNewPatient({
-                  ...newPatient,
-                  name: e.target.value,
-                })
+                setNewPatient({ ...newPatient, name: e.target.value })
               }
               className="w-full mb-3 border p-2 rounded"
             />
@@ -234,10 +219,7 @@ export function PatientsTab({ patients, setPatients }: Props) {
               placeholder="Injury"
               value={newPatient.injury}
               onChange={(e) =>
-                setNewPatient({
-                  ...newPatient,
-                  injury: e.target.value,
-                })
+                setNewPatient({ ...newPatient, injury: e.target.value })
               }
               className="w-full mb-3 border p-2 rounded"
             />
