@@ -133,6 +133,23 @@ def run():
     print("Saved → public/data/patients.json")
     return result
 
+def binary_search_by_name(patients, target_name):
+    left = 0
+    right = len(patients) - 1
 
+    target_name = target_name.lower()
+
+    while left <= right:
+        mid = (left + right) // 2
+        mid_name = patients[mid]["name"].lower()
+
+        if mid_name == target_name:
+            return patients[mid]
+        elif mid_name < target_name:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return None
 if __name__ == "__main__":
     run()
