@@ -145,56 +145,67 @@ export function PatientsTab({ patients, setPatients }: Props) {
 
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Patient ID</th>
-                <th>Name</th>
-                <th>Injury</th>
-                <th>Severity</th>
-                <th>Time</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
+            <div className="overflow-x-auto rounded-xl border border-gray-200">
+  <table className="w-full table-auto">
+    <thead className="bg-gray-50">
+      <tr>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Rank</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Patient ID</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Name</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Injury</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Severity</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Time</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Status</th>
+        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Action</th>
+      </tr>
+    </thead>
 
-            <tbody>
-              {patients.map((patient) => {
-                const statusColor = getStatusColor(patient.status);
+    <tbody className="divide-y divide-gray-100">
+      {patients.map((patient, index) => {
+        const statusColor = getStatusColor(patient.status);
 
-                return (
-                  <tr key={patient.id}>
-                    <td>{patient.rank}</td>
-                    <td>{patient.id}</td>
-                    <td>{patient.name}</td>
-                    <td>{patient.injury}</td>
-                    <td>{patient.severity}</td>
-                    <td>{patient.treatmentTime} min</td>
-                    <td>
-                      <span
-                        className="px-3 py-1 rounded-full"
-                        style={{
-                          backgroundColor: statusColor.bg,
-                          color: statusColor.text,
-                        }}
-                      >
-                        {patient.status}
-                      </span>
-                    </td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          handleDeletePatient(patient.id)
-                        }
-                        className="text-red-600"
-                      >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
+        return (
+          <tr
+            key={patient.id}
+            className={`hover:bg-gray-50 transition ${
+              index % 2 === 0 ? "bg-white" : "bg-gray-50/40"
+            }`}
+          >
+            <td className="px-4 py-4">{patient.rank}</td>
+            <td className="px-4 py-4 font-medium">{patient.id}</td>
+            <td className="px-4 py-4">{patient.name}</td>
+            <td className="px-4 py-4">{patient.injury}</td>
+            <td className="px-4 py-4 font-semibold">
+              {patient.severity}
+            </td>
+            <td className="px-4 py-4">
+              {patient.treatmentTime} min
+            </td>
+            <td className="px-4 py-4">
+              <span
+                className="px-3 py-1 rounded-full text-sm font-medium"
+                style={{
+                  backgroundColor: statusColor.bg,
+                  color: statusColor.text,
+                }}
+              >
+                {patient.status}
+              </span>
+            </td>
+            <td className="px-4 py-4">
+              <button
+                onClick={() => handleDeletePatient(patient.id)}
+                className="text-red-600 hover:text-red-800 font-medium"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>
           </table>
         </div>
       </div>
