@@ -12,6 +12,7 @@ export function PatientsTab({ patients, setPatients }: Props) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [searchName, setSearchName] = useState("");
   const [searchResult, setSearchResult] = useState<Patient | null>(null);
+  const [notFound, setNotFound] = useState(false);
 
   const [newPatient, setNewPatient] = useState({
     name: "",
@@ -29,15 +30,31 @@ export function PatientsTab({ patients, setPatients }: Props) {
         return { bg: "#FEF3C7", text: "#D97706" };
       case "Stable":
         return { bg: "#D1FAE5", text: "#16A34A" };
+      default:
+        return { bg: "#F3F4F6", text: "#6B7280" };
     }
   };
 
   const handleSearch = () => {
+    const searchValue = searchName.trim().toLowerCase();
+
+    if (!searchValue) {
+      setSearchResult(null);
+      setNotFound(false);
+      return;
+    }
+
     const result = patients.find((patient) =>
-      patient.name.toLowerCase().includes(searchName.toLowerCase())
+      patient.name.toLowerCase().includes(searchValue)
     );
 
-    setSearchResult(result || null);
+    if (result) {
+      setSearchResult(result);
+      setNotFound(false);
+    } else {
+      setSearchResult(null);
+      setNotFound(true);
+    }
   };
 
   const handleAddPatient = () => {
@@ -117,6 +134,14 @@ export function PatientsTab({ patients, setPatients }: Props) {
               <div>Name: {searchResult.name}</div>
               <div>Severity: {searchResult.severity}</div>
               <div>Status: {searchResult.status}</div>
+            </div>
+          </div>
+        )}
+
+        {notFound && (
+          <div className="mt-4 border border-red-200 bg-red-50 rounded-lg p-4">
+            <div className="font-semibold text-red-700">
+              Patient not found
             </div>
           </div>
         )}
