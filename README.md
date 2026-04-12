@@ -3,7 +3,7 @@
 
   This is a code bundle for ER Optimizer Dashboard UI. The original project is available at https://www.figma.com/design/oVtnfUCcxE1Jf2l3Wq0DmC/ER-Optimizer-Dashboard-UI.
 
-  ## Running the code
+  ## Running the code now
 
   Run `npm i` to install the dependencies.
 
